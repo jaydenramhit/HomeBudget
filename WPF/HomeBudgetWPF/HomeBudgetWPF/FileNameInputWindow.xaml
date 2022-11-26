@@ -1,0 +1,47 @@
+﻿<Window x:Class="HomeBudgetWPF.FileNameInputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HomeBudgetWPF"
+        mc:Ignorable="d"
+        Title="Input File Name" Height="200" Width="800" 
+        MinWidth="800" MinHeight="200" MaxWidth="800" MaxHeight="400"
+        WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value ="#bbb"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value ="#bbb"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value ="#bbb"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#222">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Viewbox MaxWidth="300px" Grid.ColumnSpan="3">
+            <TextBlock  VerticalAlignment="Center" TextAlignment="Center" >Enter a filename for your new budget.</TextBlock>
+        </Viewbox>
+
+        <TextBox TextAlignment="Left" VerticalAlignment="Center" x:Name="txtFileInput" FontSize="24px" Grid.Row="1" Grid.Column="1" TextChanged="txtFileInput_TextChanged"/>
+        <Viewbox Grid.Row="1" VerticalAlignment="Center" MinHeight="24px">
+            <TextBlock TextAlignment="Right" x:Name="txtFolderDisplay"/>
+        </Viewbox>
+        <Button x:Name="btnCreateFile" MaxHeight="50px" MinWidth="100" Margin="20px" Grid.Column="2" Grid.Row="1" Click="btnCreateFile_Click">
+            <Viewbox>
+                <Label Content="Create File"/>
+            </Viewbox>
+        </Button>
+    </Grid>
+</Window>

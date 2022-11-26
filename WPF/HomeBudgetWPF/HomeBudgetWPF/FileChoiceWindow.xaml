@@ -1,0 +1,65 @@
+﻿<Window x:Class="HomeBudgetWPF.FileChoiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HomeBudgetWPF"
+        mc:Ignorable="d"
+        Title="File Picker" MinHeight="300" MinWidth="300">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value ="#bbb"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value ="#bbb"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value ="#bbb"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#222">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Viewbox VerticalAlignment="Bottom" Grid.Column="1">
+            <TextBlock FontWeight="Bold" Text="Home Budget Application"/>
+        </Viewbox>
+        <Viewbox Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="Select an option to begin."/>
+        </Viewbox>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="1" Grid.Row="1" x:Name="btnNewFile" FontSize="25px" Click="btnNewFile_Click">
+                <Viewbox>
+                    <Label>New Budget</Label>
+                </Viewbox>
+            </Button>
+
+            <Button Grid.Column="3" Grid.Row="1" x:Name="btnExistingFile" FontSize="25px" Click="btnExistingFile_Click">
+                <Viewbox>
+                    <Label>Existing Budget</Label>
+                </Viewbox>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
